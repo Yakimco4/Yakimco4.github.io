@@ -197,14 +197,32 @@ window.onload = () => {
     text[0].style.fontFamily = fonts[styleIndex];
     styleIndexspan.innerHTML = fonts[styleIndex];
   });
+
+  //boldness
+  const bold = document.querySelector('.bolder');
+  const thin = document.querySelector('.thiner');
+  let font_weight = 400;
+
+  bold.addEventListener('click', () => {
+    if (font_weight < 900) {
+      font_weight = font_weight + 100
+    }
+    else { font_weight = 900; }
+    invText.style.fontWeight = font_weight;
+  })
+
+  thin.addEventListener('click', () => {
+    font_weight = font_weight - 100;
+    invText.style.fontWeight = font_weight;
+  })
+
   //inversion
-  const invText = document.querySelector('.text');
+  const invText = document.querySelector('.text1');
   inversion.addEventListener('click', () => {
 
-    invText.style.color == 'white';
-    invText.style.backgroundColor == 'black';
-
-
+    invText.style.color = 'white'
+    invText.style.backgroundColor = 'black';
+    document.body.style.backgroundColor = 'white';
   });
 
 }
